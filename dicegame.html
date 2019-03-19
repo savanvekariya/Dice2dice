@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The dice game</title>
+	<style type="text/css">
+		table,th,td{border: 1px solid black}
+		h1,table,p{font-family: "Comic Sans MS", "Comic Sans", cursive;}
+		tr{font-size: 35px}
+		h1{font-size: 55px}
+		.button {
+  
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+	</style>
+</head>
+<body>
+<script type="text/javascript" src="dicegame_script.js"></script>
+
+<h1><center>Welcome to dice2dice!</center></h1>
+<table align="center">
+
+	<tr>
+		<td><b>Player 1</b></td>
+		<td><b>Player 2</b></td>
+	</tr>
+
+	<tr>
+		<td id=score1>0</td>
+		<td id=score2>0</td>
+	</tr>
+	<tr>
+		<td id=final_score1>0</td>
+		<td id=final_score2>0</td>
+	</tr>
+	<tr>
+		<td colspan="2"><center><button class="button" name="roll" onclick="rolldice()">Roll Me</button></center></td>
+	</tr>
+</table>
+
+<p id=winner></p>
+</body>
+</html>
